@@ -11,14 +11,14 @@ class User(SqlAlchemyBase, UserMixin):
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
-    surname = sqlalchemy.Column(sqlalchemy.String, unique=True)
-    name = sqlalchemy.Column(sqlalchemy.String, unique=True)
-    age = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
-    position = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    speciality = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    address = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    email = sqlalchemy.Column(sqlalchemy.String, index=True, nullable=True)
-    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    surname = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    name = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    age = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
+    position = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    speciality = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    address = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True)
+    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=False)
     modified_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                       default=datetime.datetime.now)
 
